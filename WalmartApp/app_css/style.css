@@ -108,19 +108,3 @@ form.backy {
 		color: #606060;
 		text-decoration: underline;
 	}
-
-#right-side-align a {
-	float: right;
-	padding-right: 5%;
-}
-
-#left-side-align {
-	text-align: left;
-
-}
-
-.side-link-design {
-	background-color: #d8d8d8
-	display: inline-block;
-	border-radius: 5px;
-}
