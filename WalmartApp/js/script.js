@@ -1,5 +1,6 @@
 function choose() {
 	var weather,tripType;
+	var apiKey="ktntg7wnkdyg2w2ax4u8jngd";
 	var activity=0;	
 	if (document.getElementsByName('weather')[0].checked){
 		weather="hot";
@@ -50,5 +51,8 @@ function choose() {
 	console.log("tripType:",tripType)
 	console.log("activity:",activity)
 
+	$.getJSON( "http://api.walmartlabs.com/v1/taxonomy?format=json&apiKey=ktntg7wnkdyg2w2ax4u8jngd", function( data ) {
+		console.log(data);
+	});
 
 }
