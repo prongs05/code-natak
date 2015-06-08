@@ -7,7 +7,8 @@
 </head>
 <body>
 
-	<div class = "hdr">
+	<!-- <<<<<<< HEAD:WalmartApp/index.html -->
+	<!-- <div class = "hdr">
 		<h1 class = "left-align"><strong id = "link-look-better"><a href="first.html">Vacation</a></strong></h1>
 		<p class = "left-align"> Easiest way to shop for travel </p>
 
@@ -60,4 +61,50 @@
 		<div class="footer">Created by sC</div>
 		<script src="js/script.js"></script>
 	</body>
-	</html>
+	======= -->
+	<div class="hdr">
+		<img src="../img/logo.png" alt="Logo" id="logo">
+		<h1><strong id="link-look-better"><a href="#">Vacation</a></strong></h1>
+		<p> Easiest way to shop for travel </p>
+
+	</div>
+
+	<div class="welcome-pg" id="content">
+		<p>
+			Leave the stress of travel shopping behind. <br /> Find everything you'll need for your trip on Vacation.
+		</p>
+	</div>
+
+	<div class="question">
+		<h2> So, Let's get started </h2>
+		<h3>Tell us a little about your trip</h3>
+
+		<form class="backy">
+			<fieldset>
+			<legend>Where are you going SOUNDS WRONG CHANGE THIS TITLE?</legend>
+				<select id="place">
+					<option value="london">London</option>
+					<option value="barcelona">Barcelona</option>
+					<option value="leh">Leh</option>
+					<option value="goa">Goa</option>
+				</select>
+			</fieldset>
+			<fieldset>
+				<legend>What are the activities you are looking forward to?</legend>
+				<input type="checkbox" name="activity" value="business">Business Trip
+				<input type="checkbox" name="activity" value="swimming">Swimming/Beach
+				<input type="checkbox" name="activity" value="sightsee">Sightseeing
+				<br>
+				<input type="checkbox" name="activity" value="trek">Hiking/Trek
+				<input type="checkbox" name="activity" value="club">Clubbing
+				<input type="checkbox" name="activity" value="snow">Fun with Snow
+				<br><br>
+
+				<button type="button" onclick="choose()" value="something">Submit</button>
+			</fieldset>
+		</form>
+	</div>
+	<div class="footer">Created by sC</div>
+	<script src="js/script.js"></script>
+</body>
+</html>
