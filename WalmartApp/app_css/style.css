@@ -4,51 +4,47 @@ body, input, select, textarea {
 		font-size: 13pt;
 		font-weight: 400;
 		line-height: 2em;
-		margin: 0px;
-		padding: 0px;
+		margin: 0;
+		padding: 0;
 	}
 
 div.welcome-pg {
-	background-image: url("../images/banner.jpg");
+	background-image: url("../images/boat2.jpg");
 	float: left;
 	width: 50%;
-	height: 85%;
+	height: 50%;
 	/*background-color: #33cccc;*/
-	background-size: 100%;
-	padding: 11% 0;
+	background-size: 200%;
+	padding: 15% 0;
 	line-height: 1.75;
 	text-align: center;
 }
 
 div.hdr {
-	background-color: #33cccc;
-	color:#fff;
+	background-color: #fff;
+	color:#66ccff;
 	width: 100%;
 	height: 10%;
-    margin: 0px;
-    border: 1px solid gray;
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align:center;
+    border: 3px solid #c8c2c2;
     line-height: 150%;
-    padding-left: 5%;
-    padding-right: 5%;
 }
 
-.left-align {
-	text-align: left;
-
-}
-
-.right-align {
-	text-align: right;
-	margin-left: 70%;
-}
-
+    #logo{
+        float: right;
+        width: 30%;
+        height: 30%;
+        margin-bottom: 0;
+        margin-right:35%
+    }
 
 div.question {
 	
 	margin-left: 50%;
     border-left: 1px solid gray;
 	background-size: cover;
-    border-left: 1px solid gray;
     padding: 1em;
     color: #686868;
 }
@@ -57,8 +53,8 @@ div.footer {
 	background-color: #10a1ff;
 	color:#fff;
 	width: 100%;
-	height: 5%
-    margin: 0px;
+	height: 5%;
+    margin: 0;
     border: 1px solid gray;
     line-height: 150%;
     text-align: right;
@@ -66,12 +62,12 @@ div.footer {
 }
 
 form.backy {
-	background-color: #ffcc00;
+	background-color: #fecd0a;
 }
 /*		color: #10a1ff;*/
 	#content h1 {
 
-		color: #ffcc00;
+		color: #fecd0a;
 		display: inline-block;
 		font-size: 3.5em;
 		line-height: 1.35;
@@ -105,6 +101,15 @@ form.backy {
 	}
 
 	#link-look-better a:hover {
-		color: #606060;
-		text-decoration: underline;
+		color: #fbe705;
 	}
+
+.left-align {
+	text-align: left;
+
+}
+
+.right-align {
+	text-align: right;
+	margin-left: 70%;
+}

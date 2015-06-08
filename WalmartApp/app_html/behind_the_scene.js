@@ -1,54 +1,49 @@
 function choose() {
-	var weather,tripType;
-	var activity=0;	
-	if (document.getElementsByName('weather')[0].checked){
-		weather="hot";
+	var weather,place;
+	var activity = 0;
+	var pla = document.getElementById("place");
+	place = pla.value;
+	if (pla.value === "london") {
+		weather = "wet";
 	}
-	else if (document.getElementsByName('weather')[1].checked){
-		weather="cold";
+	else if (pla.value === "barcelona") {
+		weather = "hot";
 	}
-	else if (document.getElementsByName('weather')[2].checked){
-		weather="wet";
+	else if (pla.value === "leh") {
+		weather = "cold";
+	}
+	else if (pla.value === "goa") {
+	    weather = "hot";
 	}
 	else{
-		alert("No Weather selected");
+		alert("No Place selected");
 	}
 
-	if (document.getElementsByName('trip_type')[0].checked){
-		tripType="business";
-	}
-	else if (document.getElementsByName('trip_type')[1].checked){
-		tripType="leisure";
-	}
-	else if (document.getElementsByName('trip_type')[2].checked){
-		tripType="mix";
-	}
-	else{
-		alert("No Trip type selected");
-	}
 
 	if (document.getElementsByName('activity')[0].checked){
-		activity=activity+1;
+		activity = activity+1;
 	}
-	if (document.getElementsByName('activity')[1].checked){
-		activity=activity+10;
+	if (document.getElementsByName('activity')[1].checked) {
+	    activity = activity + 10;
 	}
 	if (document.getElementsByName('activity')[2].checked){
-		activity=activity+100;
+		activity = activity+100;
 	}
 	if (document.getElementsByName('activity')[3].checked){
-		activity=activity+1000;
+		activity = activity+1000;
 	}
 	if (document.getElementsByName('activity')[4].checked){
-		activity=activity+10000;
+		activity = activity+10000;
 	}
-	if (activity===0){
-		alert("No activity seletced")
+	if (document.getElementsByName('activity')[5].checked){
+		activity = activity+100000;
+	}
+	if (activity === 0){
+	    alert("No activity seletced");
 	}
 
-	console.log("weather:",weather)
-	console.log("tripType:",tripType)
-	console.log("activity:",activity)
+	console.log("place:", place);
+	console.log("activity:",activity);
 
 
 }
