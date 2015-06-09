@@ -1,26 +1,23 @@
 function choose() {
-	var weather,place;
-	var activity = 0;
-	var pla = document.getElementById("place");
-	place = pla.value;
-	if (pla.value === "london") {
+	var weather,tripType,place;
+	var apiKey="ktntg7wnkdyg2w2ax4u8jngd";
+	var activity=0;	
+	var place = document.getElementById('place').value;
+
+	if (place === "london") {
 		weather = "wet";
 	}
-	else if (pla.value === "barcelona") {
+	else if (place === "barcelona") {
 		weather = "hot";
 	}
-	else if (pla.value === "leh") {
+	else if (place === "leh") {
 		weather = "cold";
 	}
-	else if (pla.value === "goa") {
+	else if (place === "goa") {
 	    weather = "hot";
 	}
-	else{
-		alert("No Place selected");
-	}
 
-
-	if (document.getElementsByName('activity')[0].checked){
+ 	if (document.getElementsByName('activity')[0].checked){
 		activity = activity+1;
 	}
 	if (document.getElementsByName('activity')[1].checked) {
@@ -56,6 +53,7 @@ function choose() {
 	console.log("activity:",activity);
 
 
+<<<<<<< HEAD:WalmartApp/app_html/behind_the_scene.js
 }
 
 
@@ -73,4 +71,18 @@ function createCORSRequest(method, url) {
     xhr = null;
   }
   return xhr;
+=======
+
+	$.ajax({
+	  url: "http://api.walmartlabs.com/v1/taxonomy?format=json&apiKey=ktntg7wnkdyg2w2ax4u8jngd",
+	  crossDomain:true,
+	  context: document.body
+	}).done(function() {
+	  console.log("done");
+	});
+
+	// $.getJSON( "http://api.walmartlabs.com/v1/taxonomy?format=json&apiKey=ktntg7wnkdyg2w2ax4u8jngd", function( data ) {
+	// 	console.log(data);
+	// });
+>>>>>>> origin/master:WalmartApp/js/script.js
 }
