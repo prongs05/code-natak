@@ -1,129 +1,126 @@
-html.back-img {
+body {
     background: url("../img/niagara.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 body, input, select, textarea {
-		color: #666;
-		font-family: "Raleway", Arial, Helvetica, sans-serif;
-		font-size: 13pt;
-		font-weight: 400;
-		line-height: 2em;
-		margin: 0;
-		padding: 0;
-	}
+    color: #666;
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-size: 13pt;
+    font-weight: 400;
+    line-height: 2em;
+    margin: 0;
+    padding: 0;
+}
 
 div.hdr {
-	background-color: #fff;
-	color:#66ccff;
-	width: 100%;
-	height: 10%;
+    background-color: #fff;
+    color:#66ccff;
+    width: 100%;
+    height: 10%;
     margin: 0;
     font-size:18pt;
     font-family:Arial, Helvetica, sans-serif;
     text-align:right;
-    border: 3px solid #c8c2c2;
-    line-height: 150%;
 }
 
-    #logo{
-        float: right;
-        width:12%;
-        height: 12%;
-        margin-bottom: 10px;
-        margin-right:40%;
-    }
+#logo{
+    float: right;
+    width:12%;
+    height: 12%;
+    margin-bottom: 10px;
+    margin-right:40%;
+}
 
 div.welcome-pg {
-	float: left;
-	width: 50%;
-	height: 50px;
-	padding: 5% 0;
-	line-height: 1.75;
-	text-align:center;
+    float: left;
+    width: 50%;
+    height: 50px;
+    padding: 5% 0;
+    line-height: 1.75;
+    text-align:center;
 }
 
-/*		color: #10a1ff;*/
-	#content h1 {
+/*      color: #10a1ff;*/
+#content h1 {
 
-		color: #ffd531;
-		display: inline-block;
-		font-size: 3.5em;
-		line-height: 1.35;
-		margin: 0.5em;
-	}
+    color: #ffd531;
+    display: inline-block;
+    font-size: 3.5em;
+    line-height: 1.35;
+    margin: 0.5em;
+}
 
-	#content p {
-        background-color:rgb(169, 167, 167); /*for browsers not supporting rgba*/
-        background-color:rgba(169, 167, 167,0.8);
-	    background-size: cover;
-        border-radius:8px;
-		color: #fff;
-		font-size: 20pt;
-        font-weight:500;
-		margin: 1.75em;
-	}
+#content p {
+    /*background-color:rgb(169, 167, 167); //for browsers not supporting rgba
+    background-color:rgba(169, 167, 167,0.8);
+    background-size: cover;
+    border-radius:8px;*/
+    color: #fff;
+    font-size: 20pt;
+    font-weight:500;
+    margin: 1.75em;
+}
 
-    #content a {
-        color: #dff;
-        font-size: 1.8em;
-        font-weight: 200;
-    }
+#content a {
+    color: #dff;
+    font-size: 1.8em;
+    font-weight: 200;
+}
 
 div.question {
-	
-	margin-left: 50%;
+
+    margin-left: 50%;
     border-left: 1px solid gray;
-	background-size: cover;
+    background-size: cover;
     padding: 2%;
     color: #dff;
 }
 
 form.backy {
-	background-color: #ffd531;
+    background-color: #ffd531;
     border-radius:10px;
     color:#656363;
 }
 
 div.footer {
-	background-color: #66ccff;
-	color:#fff;
-	width: 100%;
-	height: 5%;
+    background-color: #66ccff;
+    color:#fff;
+    width: 100%;
+    height: 5%;
     margin-top:10px;
-    margin-bottom:2%;
     line-height: 150%;
     text-align: right;
-    padding-right: 5%;
-    margin-right:5%;
 }
 
 #link-look-better li{
-	display: inline;
-	font-family: Helvetica, Arial, sans-serif;
-	}
-	
-	#link-look-better a
-	{
-		text-decoration: none;
-		color: #fff;
-		padding: 5px;
-		background-color: #66ccff;
-		border-radius: 5px;
-	}
+    display: inline;
+    font-family: Helvetica, Arial, sans-serif;
+}
 
-	#link-look-better a:hover {
-		color: #66ccff;
-        background-color:#fff;
-	}
+#link-look-better
+{
+    font-size: 48px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    padding: 5px;
+    background-color: #66ccff;
+    border-radius: 5px;
+}
+
+a#link-look-better:hover {
+    color: #66ccff;
+    background-color:#fff;
+}   
 
 .left-align {
-	text-align: left;
+    text-align: left;
 
 }
 
 .right-align {
-	text-align: right;
-	margin-left: 70%;
+    text-align: right;
+    margin-left: 70%;
 }
 
 /*From reco.html*/
