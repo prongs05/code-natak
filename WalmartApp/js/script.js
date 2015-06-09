@@ -52,8 +52,6 @@ function choose() {
 	console.log("place:", place);
 	console.log("activity:",activity);
 
-
-<<<<<<< HEAD:WalmartApp/app_html/behind_the_scene.js
 }
 
 
@@ -71,7 +69,6 @@ function createCORSRequest(method, url) {
     xhr = null;
   }
   return xhr;
-=======
 
 	$.ajax({
 	  url: "http://api.walmartlabs.com/v1/taxonomy?format=json&apiKey=ktntg7wnkdyg2w2ax4u8jngd",
@@ -84,5 +81,4 @@ function createCORSRequest(method, url) {
 	// $.getJSON( "http://api.walmartlabs.com/v1/taxonomy?format=json&apiKey=ktntg7wnkdyg2w2ax4u8jngd", function( data ) {
 	// 	console.log(data);
 	// });
->>>>>>> origin/master:WalmartApp/js/script.js
 }
