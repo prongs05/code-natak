@@ -9,7 +9,7 @@ body, input, select, textarea {
 	}
 
 div.welcome-pg {
-	background-image: url("../img/boat2.jpg");
+	background-image: url("/img/boat2.jpg");
 	float: left;
 	width: 50%;
 	height: 50%;
@@ -33,7 +33,6 @@ div.hdr {
     line-height: 150%;
 }
 
-<<<<<<< HEAD:WalmartApp/app_css/style.css
     #logo{
         float: right;
         width: 12%;
@@ -41,13 +40,10 @@ div.hdr {
         margin-bottom: 10px;
         margin-right:40%;
     }
-=======
 #logo{
     width: 30px;
     margin-bottom: 0;
 }
->>>>>>> origin/master:WalmartApp/css/style.css
-
 div.question {
 	
 	margin-left: 50%;
@@ -134,7 +130,6 @@ div.sentence {
     font-weight:600;
     color:#666;
 }
-
 
 div#button-big a {
     text-decoration:none;
