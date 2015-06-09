@@ -53,6 +53,7 @@ div.welcome-pg {
 	}
 
 	#content p {
+        background-color:rgb(169, 167, 167); /*for browsers not supporting rgba*/
         background-color:rgba(169, 167, 167,0.8);
 	    background-size: cover;
         border-radius:8px;
