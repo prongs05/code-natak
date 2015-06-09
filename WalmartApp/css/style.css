@@ -1,3 +1,7 @@
+html.back-img {
+    background: url("../img/niagara.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
 body, input, select, textarea {
 		color: #666;
 		font-family: "Raleway", Arial, Helvetica, sans-serif;
@@ -7,18 +11,6 @@ body, input, select, textarea {
 		margin: 0;
 		padding: 0;
 	}
-
-div.welcome-pg {
-	background-image: url("../img/boat2.jpg");
-	float: left;
-	width: 50%;
-	height: 50%;
-	/*background-color: #33cccc;*/
-	background-size: 200%;
-	padding: 15% 0;
-	line-height: 1.75;
-	text-align: center;
-}
 
 div.hdr {
 	background-color: #fff;
@@ -40,32 +32,16 @@ div.hdr {
         margin-bottom: 10px;
         margin-right:40%;
     }
-div.question {
-	
-	margin-left: 50%;
-    border-left: 1px solid gray;
-	background-size: cover;
-    padding: 2%;
-    color: #686868;
+
+div.welcome-pg {
+	float: left;
+	width: 50%;
+	height: 50px;
+	padding: 5% 0;
+	line-height: 1.75;
+	text-align:center;
 }
 
-div.footer {
-	background-color: #66ccff;
-	color:#fff;
-	width: 100%;
-	height: 5%;
-    margin-top:30%;
-    margin-bottom:5%;
-    line-height: 150%;
-    text-align: right;
-    padding-right: 5%;
-    margin-right:5%;
-}
-
-form.backy {
-	background-color: #ffd531;
-    border-radius:10px;
-}
 /*		color: #10a1ff;*/
 	#content h1 {
 
@@ -77,16 +53,48 @@ form.backy {
 	}
 
 	#content p {
+        background-color:rgba(169, 167, 167,0.8);
+	    background-size: cover;
+        border-radius:8px;
 		color: #fff;
-		font-size: 1.5em;
+		font-size: 20pt;
+        font-weight:500;
 		margin: 1.75em;
 	}
 
-	#content a{
-		color: #dff;
-		font-size: 1.8em;
-		font-weight: 200;
-	}
+    #content a {
+        color: #dff;
+        font-size: 1.8em;
+        font-weight: 200;
+    }
+
+div.question {
+	
+	margin-left: 50%;
+    border-left: 1px solid gray;
+	background-size: cover;
+    padding: 2%;
+    color: #dff;
+}
+
+form.backy {
+	background-color: #ffd531;
+    border-radius:10px;
+    color:#656363;
+}
+
+div.footer {
+	background-color: #66ccff;
+	color:#fff;
+	width: 100%;
+	height: 5%;
+    margin-top:10px;
+    margin-bottom:2%;
+    line-height: 150%;
+    text-align: right;
+    padding-right: 5%;
+    margin-right:5%;
+}
 
 #link-look-better li{
 	display: inline;
@@ -130,7 +138,7 @@ div.sentence {
 
 div#button-big a {
     text-decoration:none;
-    padding: 5px;
+    padding: 10px 5px;
     margin-top: 20%;
     margin-left: 5%;
     margin-bottom:10%;
@@ -145,4 +153,14 @@ div#button-big a:hover {
     text-decoration: none;
     background-color: #66ccff;
     color: #fff;
+}
+
+form.search-backy {
+    display:inline-block;
+    padding:10px;
+    margin-top: 15px;
+    margin-left: 5%;
+    margin-bottom:10%;
+    background-color:#ffd531;
+    border-radius: 10px;
 }
