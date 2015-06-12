@@ -1,10 +1,12 @@
-body {
-    background: url("../img/niagara.jpg") no-repeat center center fixed;
+
+body.back-img {
+    background: url("../img/canyon.jpg") no-repeat center center fixed;
     background-size: cover;
 }
+
 body, input, select, textarea {
     color: #666;
-    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-family: "Raleway", Calibri, Helvetica, sans-serif;
     font-size: 13pt;
     font-weight: 400;
     line-height: 2em;
@@ -13,81 +15,80 @@ body, input, select, textarea {
 }
 
 div.hdr {
-    background-color: #fff;
-    color:#66ccff;
+    color:#a4e0fe;
     width: 100%;
     height: 10%;
     margin: 0;
-    font-size:18pt;
+    font-size:14pt;
     font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
     text-align:right;
+    border: 3px solid #c8c2c2;
+    line-height: 150%;
 }
 
 #logo{
     float: right;
-    width:12%;
-    height: 12%;
+    width:10%;
+    height: 10%;
     margin-bottom: 10px;
     margin-right:40%;
 }
 
 div.welcome-pg {
-    float: left;
-    width: 50%;
     height: 50px;
-    padding: 5% 0;
+    padding: 1% 0;
     line-height: 1.75;
     text-align:center;
 }
 
-/*      color: #10a1ff;*/
-#content h1 {
+/*		color: #10a1ff;*/
+	#content h1 {
+		color: #ffd531;
+		display: inline-block;
+		font-size: 3.5em;
+		line-height: 1.35;
+		margin: 0.5em;
+	}
 
-    color: #ffd531;
-    display: inline-block;
-    font-size: 3.5em;
-    line-height: 1.35;
-    margin: 0.5em;
-}
+	#content p {
+        display:inline-block;
+        border-radius:8px;
+		color: #dff;
+		font-size: 24pt;
+        font-weight:bold;
+		margin-top: 5px;
+	}
 
-#content p {
-    /*background-color:rgb(169, 167, 167); //for browsers not supporting rgba
-    background-color:rgba(169, 167, 167,0.8);
-    background-size: cover;
-    border-radius:8px;*/
-    color: #fff;
-    font-size: 20pt;
-    font-weight:500;
-    margin: 1.75em;
-}
-
-#content a {
-    color: #dff;
-    font-size: 1.8em;
-    font-weight: 200;
-}
+    #content a {
+        color: #dff;
+        font-size: 1.8em;
+        font-weight: 200;
+    }
 
 div.question {
-
-    margin-left: 50%;
-    border-left: 1px solid gray;
+    display:inline-block;
+    background-color:rgba(248, 245, 245,0.1);
+    margin-top:5%;
+    margin-left:36%;
+    text-align:center;
     background-size: cover;
-    padding: 2%;
-    color: #dff;
+    color: #09011e;
 }
 
 form.backy {
     background-color: #ffd531;
     border-radius:10px;
     color:#656363;
+    font-size:16pt;
 }
 
 div.footer {
-    background-color: #66ccff;
+	/*background-color: #66ccff;
+    background-color:rgba(102,204,255,0.6);*/
+	height: 5%;
+    margin-top:8px;
     color:#fff;
-    width: 100%;
-    height: 5%;
-    margin-top:10px;
     line-height: 150%;
     text-align: right;
 }
@@ -97,16 +98,15 @@ div.footer {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-#link-look-better
-{
-    font-size: 48px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #fff;
-    padding: 5px;
-    background-color: #66ccff;
-    border-radius: 5px;
-}
+    a#link-look-better {
+        font-size: 48px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #fff;
+        padding: 5px;
+        background-color: #66ccff;
+        border-radius: 5px;
+    }
 
 a#link-look-better:hover {
     color: #66ccff;
@@ -124,41 +124,95 @@ a#link-look-better:hover {
 }
 
 /*From reco.html*/
-div.sentence {
-    text-align:left;
-    font-size:16pt;
-    margin-left: 20px;
-    margin-top: 20px;
-    margin-bottom:20px;
-    font-weight:600;
-    color:#666;
+body.back-img2 {
+    background: url("../img/italy.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 
-div#button-big a {
+div.hdr2 {
+    color:#a4e0fe;
+    width: 100%;
+    height: 10%;
+    margin:0;
+    font-size:12pt;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    text-align:right;
+    border: 3px solid #c8c2c2;
+    line-height: 150%;
+}
+
+    #logo2{
+        float: right;
+        width:9%;
+        height: 9%;
+        margin-bottom: 8px;
+        margin-right:40%;
+    }
+div.sentence {
+    clear:both;
+    float:left;
+    text-align:left;
+    font-size:16pt;
+    margin-bottom:20px;
+    padding: 0 10px;
+    background-color:#09011e;
+    font-weight:normal;
+    color:#dff;
+}
+
+div#button-big a{
     text-decoration:none;
-    padding: 10px 5px;
-    margin-top: 20%;
-    margin-left: 5%;
+    font-weight:bold;
+    padding: 5px 5px;
+    margin-left: 2%;
     margin-bottom:10%;
     text-align:center;
     font-size:16pt;
+    color: #161616;
+}
+
+div#button-big a:hover {
+    text-decoration: none;
     background-color:#ffd531;
     color: #fff;
     border-radius: 5px;
 }
 
-div#button-big a:hover {
-    text-decoration: none;
-    background-color: #66ccff;
-    color: #fff;
-}
-
 form.search-backy {
     display:inline-block;
     padding:10px;
-    margin-top: 15px;
-    margin-left: 5%;
-    margin-bottom:10%;
+    margin-top: 5px;
+    margin-bottom:7%;
     background-color:#ffd531;
     border-radius: 10px;
+}
+
+ul#listy {
+    text-align:left;
+    margin-bottom: 5%;
+    font-size:14pt;
+    font-weight:normal;
+    list-style:none;
+    padding: 10px;
+}
+
+    li#option {
+        padding: 10px 5px;
+    }
+
+    li#option:hover {
+        color:#ffd531;
+    }
+
+div.on-item {
+
+}
+
+div.item-box1 {
+    float:left;
+    margin-left:400px;
+    background-color:#66ccff;
+    display:inline-block;
+    background-size:300px 350px;
 }
