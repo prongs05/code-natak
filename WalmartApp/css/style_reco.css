@@ -24,8 +24,7 @@ div.hdr2 {
     margin-right:40%;
 }
 
-div.sentence {
-    margin-left: 20px;
+.sentence {
     margin-right: 10px;
     margin-bottom: 10px;
     clear:both;
@@ -62,33 +61,44 @@ div#button-big a:hover {
     color: #fff;
 }
 
-form.search-backy {
+.search-backy {
     clear: both;
     float: left;
     padding:10px;
     margin-top: 5px;
     margin-bottom:15px;
-    margin-left:5px;
     background-color:#ffd531;
     border-radius: 2px;
+    width:280px;
 }
 
 #listy {
+    clear:both;
+    float: left;
     text-align:left;
     margin-top: 10px;
     margin-bottom: 5px;
     font-size:18px;
     font-weight:normal;
     list-style:none;
-    padding: 10px;
 }
 
 .option{
-    padding: 10px 5px;
+    padding: 5px 0px;
+    width: 300px;
 }
 
 .option:hover {
     color:#ffd531;
+}
+
+p.option:first-child{
+    color: #fff;
+}
+
+.elem{
+    width: 280px;
+    margin-left: 20px;
 }
 
 .on-item {
@@ -107,6 +117,7 @@ form.search-backy {
     background-color:#09011e;
     font-weight:normal;
     color:#dff;
+    height: 440px;
 }
 #walmartSearchInput{
     clear: both;
@@ -136,7 +147,7 @@ div.container {
     margin: 10px 45px;
     float: left;
     width: 200px;
-    height: 350px;
+    min-height: 280px;
     text-align:center;
     font-size:14px;
     color:#fff;
@@ -149,7 +160,7 @@ div.container {
 .productImage{
     margin: 10px;
     width: 180px;
-    height: 250px;
+    height: 180px;
     clear: both;
     float: left;
 }
