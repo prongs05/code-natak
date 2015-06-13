@@ -137,7 +137,7 @@ div.container {
     margin-top: 20px;
     margin-left: 20px;
     float:left;
-    border: 1px solid #000;
+    border: 1px solid #fff;
     width: 900px;
     min-height: 450px;
     background-color:rgba(248, 245, 245,0.5);
@@ -146,8 +146,9 @@ div.container {
     border: 1px solid #000;
     margin: 10px 45px;
     float: left;
-    width: 200px;
-    min-height: 280px;
+    width: 180px;
+    padding: 0 10px;
+    min-height: 250px;
     text-align:center;
     font-size:14px;
     color:#fff;
@@ -155,10 +156,10 @@ div.container {
 }
 
 .box:hover {
-    background-color:#66ccff;
+    background-color:#2C1D54;
 }
 .productImage{
-    margin: 10px;
+    margin: 10px 0;
     width: 180px;
     height: 180px;
     clear: both;
@@ -168,10 +169,22 @@ div.container {
     clear: both;
 }
 
-.box button{
+.box a{
     clear: both;
     float: left;
-    margin: 0 0 10px 54px;
+    background-color: #ffd531;     
+    padding: 5px 77px;
+    color: #000;
+    border-bottom: 2px solid #000;
+    margin: 5px 0;
+}
+
+.box a:hover{
+    background-color: #ffd935;
+}
+
+.box a:active{
+    background-color: #fff;
 }
 
 .next-pg button{
