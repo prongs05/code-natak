@@ -1,89 +1,38 @@
-function choose() {
-	var weather,tripType,place;
-	
-	var activity=0; 
-	var place = document.getElementById('place').value;
-
-	var secretID="5438_133202_559973";
-
-
-	if (place === "london") {
-		weather = "wet";
-	}
-	else if (place === "barcelona") {
-		weather = "hot";
-	}
-	else if (place === "leh") {
-		weather = "cold";
-	}
-	else if (place === "goa") {
-		weather = "hot";
-	}
-
-	if (document.getElementsByName('activity')[0].checked){
-		activity = activity+1;
-	}
-	if (document.getElementsByName('activity')[1].checked) {
-		activity = activity + 10;
-	}
-	if (document.getElementsByName('activity')[2].checked){
-		activity = activity+100;
-	}
-	if (document.getElementsByName('activity')[3].checked){
-		activity = activity+1000;
-	}
-	if (document.getElementsByName('activity')[4].checked){
-		activity = activity+10000;
-	}
-	if (document.getElementsByName('activity')[5].checked){
-		activity = activity+100000;
-	}
-	if (activity === 0){
-		alert("No activity selected");
-	}
-	console.log("place:", place);
-	console.log("activity:", activity);
-	
-	var taxonomy;
-	function parseArray(pObj,id, completeId,callback){
-		// console.log("id ",id, " completeId ",completeId);
-		// console.log("pObj ",pObj.length);
-		for(var i=0; i<pObj.length; i++){
-			if (pObj[i].id===id){
-				console.log("FOUND: ",pObj[i].name);
-				if(id!==completeId){
-					var newId;
-					if(completeId.slice(id.length+1,completeId.length).indexOf('_') !== -1){
-						newId=completeId.slice(0,completeId.slice(id.length+1,completeId.length).indexOf("_")+id.length+1);
-					}
-					else {
-						newId=completeId;
-					}
-					parseArray(pObj[i].children,newId,completeId,callback);
-				}
-				else{
-					callback(pObj[i]);
-				}
-			}
-		}
-	}
-	
-	$.getJSON( "../taxonomy.json", function( data ) {
-		taxonomy = data;
-		parseArray(taxonomy.categories,secretID.slice(0,secretID.indexOf("_")),secretID,function(sth){
-			console.log("Something", sth);
-		});
-	});
-
- 	// window.location.href = "reco.html";
-}
 var map=[];
 var placeToTemp=[];
-placeToTemp["leh"]="cold";
-placeToTemp["london"]="wet";
-placeToTemp["barcelona"]="hot";
-placeToTemp["goa"]="hot";
+placeToTemp["leh"]="winter";
+placeToTemp["barcelona"]="summer";
+placeToTemp["goa"]="summer";
 var numItems = 24;
+var searchQuery;
+var searchQuery_flag = 0;
+
+function check() {
+    var place = document.getElementById("place").value;
+    if (place === "barcelona" || place === "goa")
+        disable();
+    else if (place === "leh")
+        enable();
+}
+function enable() {
+    document.getElementById("snow").disabled = false;
+    document.getElementById("swim").disabled = true;
+}
+
+function disable() {
+    document.getElementById("snow").disabled = true;
+    document.getElementById("swim").disabled = false;
+}
+
+function searchText() {
+    var text = document.getElementById("walmartSearchInput").value;
+    if (text != "") {
+        searchQuery = text;
+        searchQuery_flag = 1;
+        containerFill(0, 1);
+    }
+}
+
 function receiveVars(){
 	var parameters = location.search.substring(1).split("&");	
     for (var i=0; i<parameters.length;i++){
@@ -98,7 +47,7 @@ function receiveVars(){
     		// else{
     		// 	map[temp[0]]=[map[temp[0]],temp[1]];
     		// }
-    		map[temp[0]]=map[temp[0]]+" "+temp[1];
+    		map[temp[0]]=map[temp[0]]+"+"+temp[1];
     	}
     	else{
     		map[temp[0]]=temp[1];
@@ -110,6 +59,123 @@ function receiveVars(){
 var gCategoryId;
 var start=1;
 var numItems=24;
+
+function getId_Query(){
+    var query = map["place"];
+    //Clothes
+    if (gCategoryId === '5438_133162'){
+        if (map["activity"] === "business") {
+            gCategoryId = gCategoryId + "_645179";
+            query = "women";
+        }
+        else if (map["activity"] === "swim") {
+            gCategoryId = "5438_1229269_163846";
+            query = map["activity"];
+        }
+        else if (map["activity"] === "climb") {
+            gCategoryId = gCategoryId + "_592996";
+        }
+        else if (map["activity"] === "party") {
+            gCategoryId = gCategoryId + "_538874";
+        }
+        else if (map["activity"] === "sightsee") {
+            gCategoryId = gCategoryId + "_1228422";
+        }
+        else if (map["activity"] === "snow") {
+            gCategoryId = gCategoryId + "_1218839";
+        }
+    }
+    else if (gCategoryId === "5438_1045799"){ //Bags
+        if (map["activity"] === "business") {
+            gCategoryId = gCategoryId + "_1043856";
+            query = map["activity"];
+        }
+        else if (map["activity"] === "swim") {
+            gCategoryId = gCategoryId + "_1045800";
+            query = "bag";
+        }
+        else if (map["activity"] === "climb") {
+            gCategoryId = gCategoryId + "_1045801";
+            query = "bag"
+        }
+        else if (map["activity"] === "party") {
+            gCategoryId = gCategoryId + "_1045800";
+            query = "bag"
+        }
+        else if (map["activity"] === "sightsee") {
+            gCategoryId = gCategoryId + "_1045801";
+            query = "bag"
+        }
+        else if (map["activity"] === "snow") {
+            gCategoryId = gCategoryId + "_1045801";
+            query = "bag"
+        }
+    }
+    else if (gCategoryId === "5438_1045804_1045806") { //Footwear
+        if (map["activity"] === "business") {
+            query = "work";
+        }
+        else if (map["activity"] === "swim") {
+            query = "flip flop";
+        }
+        else if (map["activity"] === "climb") {
+            query = "walk";
+        }
+        else if (map["activity"] === "party") {
+            query = map["activity"];
+        }
+        else if (map["activity"] === "snow") {
+            query = query + map["activity"];
+        }
+    }
+    else if (gCategoryId === "3920") { //Books
+        query = map["activity"];
+    }
+    else if (gCategoryId === "3944") { //Electronics
+        if (map["activity"] === "business") {
+            query = "laptops tablets battery"
+        }
+        else if (map["activity"] === "swim") {
+            query = "music water";
+        }
+        else if (map["activity"] === "climb") {
+            gCategoryId = gCategoryId + "_3945";
+            query = "battery camera";
+        }
+        else if (map["activity"] === "party") {
+            gCategoryId = gCategoryId + "_133277";
+            query = "camera"
+        }
+        else if (map["activity"] === "sightsee") {
+            gCategoryId = gCategoryId + "_133277";
+            query = "camera"
+        }
+        else if (map["activity"] === "snow") {
+            gCategoryId = gCategoryId + "_133277";
+            query = "camera"
+        }
+    }
+    else if (gCategoryId === "5438_1045799_426265") { //Accessories
+        if (map["activity"] === "swim") {
+            gCategoryId = "4125_4161_1043949";
+            query = "swim";
+        }
+        else if (map["activity"] === "climb") {
+            gCategoryId = "4125";
+            query = "wear camp";
+        }
+        else if (map["activity"] === "party") {
+            gCategoryId = "3891";
+            query = "jewel"
+        }
+        else if (map["activity"] == "snow") {
+            gCategoryId = "4125_546956_1075804";
+        }
+    }
+
+    return query;
+
+}
 
 function containerFill(categoryId,thisStart){
 	if(thisStart!=null){	
@@ -133,13 +199,19 @@ function containerFill(categoryId,thisStart){
 
     var finalString = "&nbsp;";
 
-    var query=map["activity"];
-    
+    var query = getId_Query();
+    categoryId = gCategoryId;
+
     function fillCont(finalString){
     	document.getElementById("productContainer").innerHTML=finalString;	
     }
 
-    var search="http://api.walmartlabs.com/v1/search?categoryId="+categoryId+"&apiKey="+apiKey+"&start="+start+"&query="+query+"&numItems="+numItems+"&callback=?";  
+    if (searchQuery_flag == 1) {
+        search = "http://api.walmartlabs.com/v1/search?apiKey=" + apiKey + "&start=" + start + "&query=" + searchQuery + "&numItems=" + numItems + "&callback=?";
+    }
+    else {
+        search = "http://api.walmartlabs.com/v1/search?categoryId=" + categoryId + "&apiKey=" + apiKey + "&start=" + start + "&query=" + query + "&numItems=" + numItems + "&callback=?";
+    }
 	$.getJSON( search, function(data) {
 		// console.log(data);
 		if(data.numItems===0){
@@ -147,11 +219,9 @@ function containerFill(categoryId,thisStart){
 		}
 		else{
 			for(var i=0;i<data.items.length;i++){
-				// console.log(data.items[i].name, data.items[i].thumbnailImage, data.items[i].productUrl);
 				var imgStr=imgLeft+data.items[i].thumbnailImage+imgRight;
 				var nameStr=nameLeft+data.items[i].name+nameRight;
 				var buttonStr=buttonLeft+data.items[i].productUrl+buttonRight;
-				// console.log(imgStr, nameStr, buttonStr);
 
 				if(i%3==0){
 					finalString = finalString + head + ' newRow">'+ imgStr + nameStr + buttonStr + tail;				
@@ -159,14 +229,10 @@ function containerFill(categoryId,thisStart){
 				else{
 					finalString = finalString + head + '">' + imgStr + nameStr + buttonStr + tail;
 				}
-				// console.log("temp", finalString)
 			}
 			fillCont(finalString);
 		}
-	}); 
-
-	// console.log("finalString",finalString);
-	
+	});
 }
 
 function nextPage() {

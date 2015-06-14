@@ -26,8 +26,7 @@
             <form class="backy" action="reco.html" method="GET">
                 <fieldset>
                     <legend>Which place are you visiting ?</legend>
-                    <select id="place" name="place">
-                        <option value="london">London</option>
+                    <select id="place" onchange="check()" name="place">
                         <option value="barcelona">Barcelona</option>
                         <option value="leh">Leh</option>
                         <option value="goa">Goa</option>
@@ -35,12 +34,12 @@
                 </fieldset>
                 <fieldset>
                     <legend>What are the activities you are looking forward to?</legend>
-                    <div class="activityFields newRow" ><input type="checkbox" name="activity" value="business"/><p class="activities">Business Trip</p></div>
-                    <div class="activityFields" ><input type="checkbox" name="activity" value="swimming"/><p class="activities">Swimming/Beach</p></div>
-                    <div class="activityFields" ><input type="checkbox" name="activity" value="sightsee"/><p class="activities">Sightseeing</p></div>
-                    <div class="activityFields newRow" ><input type="checkbox" name="activity" value="trek"/><p class="activities">Hiking/Trek</p></div>
-                    <div class="activityFields" ><input type="checkbox" name="activity" value="club"/><p class="activities">Clubbing</p></div>
-                    <div class="activityFields" ><input type="checkbox" name="activity" value="snow"/><p class="activities">Fun with Snow</p></div>
+                    <div class="activityFields newRow" ><input id="business" type="radio" name="activity" value="business"/><p class="activities">Business Trip</p></div>
+                    <div class="activityFields" ><input id ="swim" type="radio" name="activity" value="swim"/><p class="activities">Swimming/Beach</p></div>
+                    <div class="activityFields" ><input id ="sightsee" type="radio" name="activity" value="sightsee"/><p class="activities">Sightseeing</p></div>
+                    <div class="activityFields newRow" ><input id ="climb" type="radio" name="activity" value="climb"/><p class="activities">Hiking/Trek</p></div>
+                    <div class="activityFields" ><input id ="party" type="radio" name="activity" value="party"/><p class="activities">Clubbing</p></div>
+                    <div class="activityFields" ><input id="snow" type="radio" name="activity" disabled="disabled" snow"/><p class="activities">Fun with Snow</p></div>
                     <button id="submitButton" type="submit"  value="submit">Let's Get Started</button>
                 </fieldset>
             </form>
