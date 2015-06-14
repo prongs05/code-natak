@@ -43,9 +43,8 @@ function choose() {
 	}
 	console.log("place:", place);
 	console.log("activity:", activity);
-	window.open("reco.html");
 	
-	/*var taxonomy;
+	var taxonomy;
 	function parseArray(pObj,id, completeId,callback){
 		// console.log("id ",id, " completeId ",completeId);
 		// console.log("pObj ",pObj.length);
@@ -74,12 +73,12 @@ function choose() {
 		parseArray(taxonomy.categories,secretID.slice(0,secretID.indexOf("_")),secretID,function(sth){
 			console.log("Something", sth);
 		});
-	});*/
+	});
 
  	// window.location.href = "reco.html";
 }
 
-function containerFill(){
+function containerFill(start){
 	var apiKey="ktntg7wnkdyg2w2ax4u8jngd";
 
 	var head		= '<div class="box'
@@ -91,10 +90,10 @@ function containerFill(){
     var buttonRight	= '">Buy</a>'
     var tail 		= '</div>'
 
-    var finalString = "&nbsp;"  ;
+    var finalString = "&nbsp;";
 
     var query="cold weather";     
-    var search="http://api.walmartlabs.com/v1/search?apiKey="+apiKey+"&query="+query+"&&numItems=25&callback=?";  
+    var search="http://api.walmartlabs.com/v1/search?apiKey="+apiKey+"&query="+query+"&categoryId=5438"+"&start="+start+"&numItems=24&callback=?";  
 
     function fillCont(finalString){
     	document.getElementById("productContainer").innerHTML=finalString;	
@@ -103,9 +102,9 @@ function containerFill(){
 	$.getJSON( search, function(data) {
 		// console.log(data);
 		for(var i=0;i<data.items.length;i++){
-			// console.log(data.items[i].name, data.items[i].thumbnailImage, data.items[i].productUrl);
+		    // console.log(data.items[i].name, data.items[i].thumbnailImage, data.items[i].productUrl);
 			var imgStr=imgLeft+data.items[i].thumbnailImage+imgRight;
-			var nameStr=nameLeft+data.items[i].name+nameRight;
+			var nameStr=nameLeft+data.items[i].name+" - $"+data.items[i].salePrice.toString()+nameRight;
 			var buttonStr=buttonLeft+data.items[i].productUrl+buttonRight;
 			console.log(imgStr, nameStr, buttonStr);
 
@@ -123,4 +122,14 @@ function containerFill(){
 
 	// console.log("finalString",finalString);
 	
+}
+
+function nextPage() {
+    var numItems = 24;
+    if (nextPage.start == undefined) {
+        nextPage.start = 1;
+    }
+    nextPage.start = nextPage.start + numItems;
+    alert(nextPage.start);
+    containerFill(nextPage.start);
 }
