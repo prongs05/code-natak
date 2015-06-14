@@ -220,7 +220,7 @@ function containerFill(categoryId,thisStart){
 		else{
 			for(var i=0;i<data.items.length;i++){
 				var imgStr=imgLeft+data.items[i].thumbnailImage+imgRight;
-				var nameStr=nameLeft+data.items[i].name+nameRight;
+				var nameStr=nameLeft+data.items[i].name+" - $"+data.items[i].salePrice.toString()+nameRight;
 				var buttonStr=buttonLeft+data.items[i].productUrl+buttonRight;
 
 				if(i%3==0){
