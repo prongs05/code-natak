@@ -77,8 +77,49 @@ function choose() {
 
  	// window.location.href = "reco.html";
 }
+var map=[];
+var placeToTemp=[];
+placeToTemp["leh"]="cold";
+placeToTemp["london"]="wet";
+placeToTemp["barcelona"]="hot";
+placeToTemp["goa"]="hot";
+var numItems = 24;
+function receiveVars(){
+	var parameters = location.search.substring(1).split("&");	
+    for (var i=0; i<parameters.length;i++){
+    	var temp = parameters[i].split("=");
+    	if(temp[0]==="place"){
+    		temp[1]=placeToTemp[temp[1]];
+    	}
+    	if(map[temp[0]]!=null){
+    		// if(map[temp[0]] instanceof Array){
+    		// 	map[temp[0]][map[temp[0]].length]=temp[1];
+    		// }
+    		// else{
+    		// 	map[temp[0]]=[map[temp[0]],temp[1]];
+    		// }
+    		map[temp[0]]=map[temp[0]]+" "+temp[1];
+    	}
+    	else{
+    		map[temp[0]]=temp[1];
+    	}
+    }
+	console.log(map);
+	// containerFill();
+}
+var gCategoryId;
+var start=1;
+var numItems=24;
 
-function containerFill(start){
+function containerFill(categoryId,thisStart){
+	if(thisStart!=null){	
+		start=thisStart
+	}
+	console.log(categoryId);
+	if(categoryId===null){
+		alert("SHOULDN'T HAPPEN")
+	}
+	gCategoryId=categoryId;
 	var apiKey="ktntg7wnkdyg2w2ax4u8jngd";
 
 	var head		= '<div class="box'
@@ -92,44 +133,43 @@ function containerFill(start){
 
     var finalString = "&nbsp;";
 
-    var query="cold weather";     
-    var search="http://api.walmartlabs.com/v1/search?apiKey="+apiKey+"&query="+query+"&categoryId=5438"+"&start="+start+"&numItems=24&callback=?";  
-
+    var query=map["activity"];
+    
     function fillCont(finalString){
     	document.getElementById("productContainer").innerHTML=finalString;	
     }
 
+    var search="http://api.walmartlabs.com/v1/search?categoryId="+categoryId+"&apiKey="+apiKey+"&start="+start+"&query="+query+"&numItems="+numItems+"&callback=?";  
 	$.getJSON( search, function(data) {
 		// console.log(data);
-		for(var i=0;i<data.items.length;i++){
-		    // console.log(data.items[i].name, data.items[i].thumbnailImage, data.items[i].productUrl);
-			var imgStr=imgLeft+data.items[i].thumbnailImage+imgRight;
-			var nameStr=nameLeft+data.items[i].name+" - $"+data.items[i].salePrice.toString()+nameRight;
-			var buttonStr=buttonLeft+data.items[i].productUrl+buttonRight;
-			console.log(imgStr, nameStr, buttonStr);
-
-			if(i%3==0){
-				finalString = finalString + head + ' newRow">'+ imgStr + nameStr + buttonStr + tail;				
-			}
-			else{
-				finalString = finalString + head + '">' + imgStr + nameStr + buttonStr + tail;
-			}
-			console.log("temp", finalString)
+		if(data.numItems===0){
+			alert("No results found");
 		}
-		fillCont(finalString);
-	}); 
+		else{
+			for(var i=0;i<data.items.length;i++){
+				// console.log(data.items[i].name, data.items[i].thumbnailImage, data.items[i].productUrl);
+				var imgStr=imgLeft+data.items[i].thumbnailImage+imgRight;
+				var nameStr=nameLeft+data.items[i].name+nameRight;
+				var buttonStr=buttonLeft+data.items[i].productUrl+buttonRight;
+				// console.log(imgStr, nameStr, buttonStr);
 
+				if(i%3==0){
+					finalString = finalString + head + ' newRow">'+ imgStr + nameStr + buttonStr + tail;				
+				}
+				else{
+					finalString = finalString + head + '">' + imgStr + nameStr + buttonStr + tail;
+				}
+				// console.log("temp", finalString)
+			}
+			fillCont(finalString);
+		}
+	}); 
 
 	// console.log("finalString",finalString);
 	
 }
 
 function nextPage() {
-    var numItems = 24;
-    if (nextPage.start == undefined) {
-        nextPage.start = 1;
-    }
-    nextPage.start = nextPage.start + numItems;
-    alert(nextPage.start);
-    containerFill(nextPage.start);
+    start = start + numItems;
+    containerFill(gCategoryId,start);
 }

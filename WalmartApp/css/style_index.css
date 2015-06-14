@@ -3,7 +3,7 @@
     background-size: cover;
 }
 
-div.hdr {
+.hdr {
     color:#a4e0fe;
     width: 100%;
     height: 10%;
@@ -23,7 +23,7 @@ div.hdr {
     margin-right:40%;
 }
 
-div.welcome-pg {
+.welcome-pg {
     height: 50px;
     padding: 1% 0;
     line-height: 1.75;
@@ -54,24 +54,35 @@ div.welcome-pg {
     font-weight: 200;
 }
 
-div.question {
+.question {
     display:inline-block;
-    background-color:rgba(248, 245, 245,0.1);
+    background-color:rgba(248, 245, 245,0.5);
+    padding: 10px;
+    border-radius: 2px;
     margin-top:5%;
-    margin-left:36%;
+    margin-left:27%;
     text-align:center;
     background-size: cover;
     color: #09011e;
 }
 
-form.backy {
+.backy {
     background-color: #02527a;
     border-radius: 2px;
     color:#dff;
     font-size:20px;
+    clear: both;
+    float: left;
 }
 
-div.footer {
+.backy fieldset{
+    clear: both;
+    float: left;
+    width: 560px;
+    margin: 10px;
+}
+
+.footer {
 	/*background-color: #66ccff;
     background-color:rgba(102,204,255,0.6);*/
     height: 5%;
@@ -79,4 +90,41 @@ div.footer {
     color:#fff;
     line-height: 150%;
     text-align: right;
+}
+
+.activities{
+    float: left;
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+}
+
+.activityFields{
+    float: left;
+    width: 180px;
+    height: 40px;
+    margin-left: 5px;
+}
+
+.activityFields input{
+    margin-top: 5px;
+    clear: both;
+    float: left;
+}
+#submitButton{
+    clear: both;
+    font-size: 14px;
+    padding: 10px;
+    border-radius:2px;
+    background-color:#fff;
+    border: 1px solid #000; 
+
+    margin: 0 auto;
+}
+#place{
+    font-size: 14px;
+    padding: 10px;
+    border-radius:2px;
+    background-color:#fff;
+    border: 1px solid #000;     
 }

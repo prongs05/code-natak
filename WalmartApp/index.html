@@ -23,29 +23,25 @@
         <div class="question">
             <h2>Tell us a little about your trip</h2>
 
-            <form class="backy" action="reco.html">
+            <form class="backy" action="reco.html" method="GET">
                 <fieldset>
                     <legend>Which place are you visiting ?</legend>
-                    <select id="place">
+                    <select id="place" name="place">
                         <option value="london">London</option>
                         <option value="barcelona">Barcelona</option>
                         <option value="leh">Leh</option>
                         <option value="goa">Goa</option>
                     </select>
                 </fieldset>
-                <br>
                 <fieldset>
                     <legend>What are the activities you are looking forward to?</legend>
-                    <input type="checkbox" name="activity" value="business">Business Trip
-                    <input type="checkbox" name="activity" value="swimming">Swimming/Beach
-                    <input type="checkbox" name="activity" value="sightsee">Sightseeing
-                    <br />
-                    <input type="checkbox" name="activity" value="trek">Hiking/Trek
-                    <input type="checkbox" name="activity" value="club">Clubbing
-                    <input type="checkbox" name="activity" value="snow">Fun with Snow
-                    <br><br>
-
-                    <button type="button" onclick="choose()" value="submit">Let's Get Started</button>
+                    <div class="activityFields newRow" ><input type="checkbox" name="activity" value="business"/><p class="activities">Business Trip</p></div>
+                    <div class="activityFields" ><input type="checkbox" name="activity" value="swimming"/><p class="activities">Swimming/Beach</p></div>
+                    <div class="activityFields" ><input type="checkbox" name="activity" value="sightsee"/><p class="activities">Sightseeing</p></div>
+                    <div class="activityFields newRow" ><input type="checkbox" name="activity" value="trek"/><p class="activities">Hiking/Trek</p></div>
+                    <div class="activityFields" ><input type="checkbox" name="activity" value="club"/><p class="activities">Clubbing</p></div>
+                    <div class="activityFields" ><input type="checkbox" name="activity" value="snow"/><p class="activities">Fun with Snow</p></div>
+                    <button id="submitButton" type="submit"  value="submit">Let's Get Started</button>
                 </fieldset>
             </form>
         </div>

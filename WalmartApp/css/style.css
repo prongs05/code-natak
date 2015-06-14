@@ -37,3 +37,6 @@ a#link-look-better:hover {
     text-align: right;
     margin-left: 70%;
 }
+.newRow{
+    clear: both;
+}
