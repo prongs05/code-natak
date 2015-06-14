@@ -42,9 +42,10 @@ function choose() {
 		alert("No activity selected");
 	}
 	console.log("place:", place);
-	console.log("activity:",activity);
+	console.log("activity:", activity);
+	window.open("reco.html");
 	
-	var taxonomy;
+	/*var taxonomy;
 	function parseArray(pObj,id, completeId,callback){
 		// console.log("id ",id, " completeId ",completeId);
 		// console.log("pObj ",pObj.length);
@@ -73,7 +74,7 @@ function choose() {
 		parseArray(taxonomy.categories,secretID.slice(0,secretID.indexOf("_")),secretID,function(sth){
 			console.log("Something", sth);
 		});
-	});
+	});*/
 
  	// window.location.href = "reco.html";
 }
@@ -115,8 +116,8 @@ function containerFill(){
 				finalString = finalString + head + '">' + imgStr + nameStr + buttonStr + tail;
 			}
 			console.log("temp", finalString)
-			fillCont(finalString);
 		}
+		fillCont(finalString);
 	}); 
 
 
