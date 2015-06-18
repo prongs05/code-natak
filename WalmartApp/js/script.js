@@ -41,12 +41,7 @@ function receiveVars(){
     		temp[1]=placeToTemp[temp[1]];
     	}
     	if(map[temp[0]]!=null){
-    		// if(map[temp[0]] instanceof Array){
-    		// 	map[temp[0]][map[temp[0]].length]=temp[1];
-    		// }
-    		// else{
-    		// 	map[temp[0]]=[map[temp[0]],temp[1]];
-    		// }
+
     		map[temp[0]]=map[temp[0]]+"+"+temp[1];
     	}
     	else{
@@ -54,7 +49,6 @@ function receiveVars(){
     	}
     }
 	console.log(map);
-	// containerFill();
 }
 var gCategoryId;
 var start=1;
